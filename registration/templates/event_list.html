@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Available Events</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Orbitron', sans-serif;
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 40px 20px;
+      overflow-x: hidden;
+    }
+    h1 {
+      font-size: 36px;
+      margin-bottom: 40px;
+      color: #00ffe5;
+      text-shadow: 0 0 20px #00ffe5;
+      animation: flicker 2s infinite alternate;
+    }
+    .event-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 2px solid #00ffe5;
+      border-radius: 20px;
+      padding: 25px 30px;
+      margin-bottom: 30px;
+      width: 90%;
+      max-width: 600px;
+      box-shadow: 0 0 15px #00ffe5, 0 0 25px #3c00ff;
+      text-align: center;
+      transform: translateY(50px);
+      opacity: 0;
+      animation: fadeUp 1s ease forwards;
+    }
+    .event-card:nth-child(2) {
+      animation-delay: 0.3s;
+    }
+    .event-card:nth-child(3) {
+      animation-delay: 0.6s;
+    }
+    .event-title {
+      font-size: 24px;
+      margin-bottom: 10px;
+      color: #ffffff;
+    }
+    .event-date {
+      color: #ccc;
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+    a.register-btn {
+      text-decoration: none;
+      padding: 12px 25px;
+      border-radius: 10px;
+      background: linear-gradient(to right, #00ffe5, #3c00ff);
+      color: #000;
+      font-weight: bold;
+      font-size: 16px;
+      box-shadow: 0 0 10px #00ffe5, 0 0 20px #3c00ff;
+      transition: all 0.3s ease;
+    }
+    a.register-btn:hover {
+      background: linear-gradient(to right, #3c00ff, #00ffe5);
+      transform: scale(1.05);
+      box-shadow: 0 0 20px #00ffe5, 0 0 30px #3c00ff;
+    }
+
+    @keyframes flicker {
+      0% { opacity: 1; }
+      100% { opacity: 0.85; }
+    }
+    @keyframes fadeUp {
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Available Events</h1>
+
+  {% for event in events %}
+    <div class="event-card">
+      <div class="event-title">{{ event.title }}</div>
+      <div class="event-date">{{ event.date }}</div>
+      <a href="{% url 'register' event.id %}" class="register-btn">Register</a>
+    </div>
+  {% empty %}
+    <p style="color: #fff; font-size: 18px;">No events available at the moment.</p>
+  {% endfor %}
+
+</body>
+</html>

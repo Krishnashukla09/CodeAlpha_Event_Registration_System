@@ -1,0 +1,75 @@
+<h2>Thank you for registering for {{ event.title }}!</h2>
+<a href="{% url 'event_list' %}">Back to events</a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Success</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Orbitron', sans-serif;
+      background: radial-gradient(circle, #0f0c29, #302b63, #24243e);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      padding: 20px;
+    }
+    .success-container {
+      background: rgba(255, 255, 255, 0.05);
+      border: 2px solid #00ff88;
+      border-radius: 15px;
+      padding: 40px;
+      text-align: center;
+      box-shadow: 0 0 20px #00ff88, 0 0 40px #3c00ff;
+      animation: fadeIn 1s ease forwards;
+    }
+    h2 {
+      font-size: 28px;
+      margin-bottom: 15px;
+      color: #00ff88;
+      text-shadow: 0 0 10px #00ff88;
+    }
+    a {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 25px;
+      background: linear-gradient(to right, #00ffe5, #3c00ff);
+      color: #000;
+      text-decoration: none;
+      border-radius: 10px;
+      font-weight: bold;
+      box-shadow: 0 0 10px #00ffe5, 0 0 20px #3c00ff;
+      transition: transform 0.3s ease;
+    }
+    a:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px #00ffe5, 0 0 30px #3c00ff;
+    }
+    @keyframes fadeIn {
+      from {
+        transform: translateY(20px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="success-container">
+    <h2>Thank you for registering for {{ event.title }}!</h2>
+    <a href="{% url 'event_list' %}">Back to Events</a>
+  </div>
+</body>
+</html>
