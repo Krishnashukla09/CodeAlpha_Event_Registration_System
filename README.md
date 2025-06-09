@@ -47,3 +47,21 @@ Event_Registration/
 git clone https://github.com/Krishnashukla09/Event_Registration.git
 cd Event_Registration
 
+
+2. Install dependencies:
+
+pip install flask
+Setup MySQL:
+
+3. Create database and table using db_config.sql
+
+Update database credentials in app.py
+
+4. Run the app:
+
+python app.py
+
+
+5. Open your browser and go to:
+
+http://localhost:5000
