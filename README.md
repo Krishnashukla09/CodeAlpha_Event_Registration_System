@@ -27,3 +27,23 @@ A web-based application to register users for events, manage attendee lists, and
 
 ## 📂 Folder Structure
 
+Event_Registration/
+├── app.py
+├── templates/
+│ ├── register.html
+│ └── users.html
+├── static/
+│ └── (optional CSS or JS files)
+├── db_config.sql
+└── README.md
+
+
+---
+
+## 💻 How to Run Locally
+
+1. Clone the repository:
+```bash
+git clone https://github.com/Krishnashukla09/Event_Registration.git
+cd Event_Registration
+
